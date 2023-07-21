@@ -1,9 +1,11 @@
-import {Navbar} from './Navbar.js'
-import {NavItem} from './Navbar.js'
-import {Home} from './icons.js'
-import {Profile} from './icons.js'
-import {Chat} from './icons.js'
-import {Game} from './icons.js'
+import {Navbar} from './Navbar.js';
+import {NavItem} from './Navbar.js';
+import {Home} from './icons.js';
+import {Profile} from './icons.js';
+import {Chat} from './icons.js';
+import {Game} from './icons.js';
+import {Setting} from './icons.js';
+import {SettingPage} from './Setting.js';
 import { useState } from 'react';
 
 function App() {
@@ -32,10 +34,16 @@ function App() {
 				onClick={() => setPage('Game')}
 				>
 			</NavItem>
+			<NavItem 
+				icon={<Setting></Setting>} 
+				onClick={() => setPage('Setting')}
+				>
+			</NavItem>
 		</Navbar>
 		<div className="main">
 			<p>{page}</p>
 			{/** show page component according to state */}
+			{page === 'Setting' && <SettingPage />}
 		</div>
 	</div>
   );
