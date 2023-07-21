@@ -1,0 +1,42 @@
+
+/* CSS variable */
+:root {
+	--bg: #242526;
+	--bg-accent: #484a4d;
+	--text-color: #dadce1;
+	--nav-size: 60px;
+	--border: 1px solid #474a4d;
+	--border-radius: 8px;
+	--speed: 500ms;
+}
+
+.navbar {
+	position:sticky;
+	top: 0;
+	height: var(--nav-size);
+	background-color: var(--bg);
+	border-bottom: var(--border);
+}
+.navbar-ul {
+	height: 100%;
+	width: 100%;
+	display: flex;
+	align-items: center;
+	gap: 10px;
+	list-style: none;
+}
+
+.nav-item {
+	height: calc(var(--nav-size) * 0.8); 
+	width: calc(var(--nav-size) * 0.8); 
+	background-color: var(--bg-accent);
+	border-radius: 50%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	overflow: visible;
+	transition: filter var(--speed);
+}
+.nav-item:hover {
+	filter: brightness(1.3);
+}
