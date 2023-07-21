@@ -10,20 +10,32 @@
 	--speed: 500ms;
 }
 
+.wrapper {
+	display: flex;
+	justify-content: flex-start;
+	gap: 5rem;
+}
+
+.main {
+
+}
+
 .navbar {
 	position:sticky;
 	top: 0;
-	height: var(--nav-size);
+	width: var(--nav-size);
+	/* height: 43rem; */
 	background-color: var(--bg);
-	border-bottom: var(--border);
 }
 .navbar-ul {
 	height: 100%;
 	width: 100%;
 	display: flex;
+	flex-direction: column;
 	align-items: center;
 	gap: 10px;
 	list-style: none;
+	padding-left: 0;
 }
 
 .nav-item {
@@ -34,9 +46,8 @@
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	overflow: visible;
 	transition: filter var(--speed);
 }
 .nav-item:hover {
-	filter: brightness(1.3);
+	filter: brightness(1.7);
 }

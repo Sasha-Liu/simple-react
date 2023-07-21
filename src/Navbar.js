@@ -1,11 +1,14 @@
 import './css/Navbar.css'
-import {useState} from 'react';
+import useWindowDimensions from './useWindowDim.js';
 
 export function Navbar(props) {
-	
+	const { height, width } = useWindowDimensions();
 	
 	return (
-		<nav className="navbar">
+		<nav 
+			className="navbar"
+			style={{ height: height}}
+			>
 			<ul className="navbar-ul">
 				{props.children}
 			</ul>
@@ -15,13 +18,14 @@ export function Navbar(props) {
 
 export function NavItem(props) {
 	return (
-		<li className="nav-item">
-		<a className="icon-button">
-			{props.icon}
-		</a>
-		{/*child page goes here*/}
-		
-	
+		<li 
+			className="nav-item" 
+			onClick={props.onClick}
+			>
+			<a className="icon-button">
+				{props.icon}
+			</a>
+			{props.children}
 		</li>
 	);
 }
