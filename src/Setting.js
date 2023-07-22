@@ -65,11 +65,48 @@ function SetdoubleAuthen() {
 }
 
 function SetNick() {
+	/*get user nickname from backend*/
+	let nick = 'myAwesomeNick';
 	
+	/*upon change need to verify if nickname is valid */
+
+	return (
+		<div>
+			<form style={{fontFamily: "Lucida Console, Courier New, monospace"}}>
+				<label 
+					style={{color: "darkgrey"}}
+					htmlFor="nick">
+					<h3>Nickname {nick}</h3>
+				</label>
+				<input 
+					name="nick" 
+					id="nick" 
+					placeholder='new nickname'>
+				</input>
+				<input type="submit" style={{margin: "1rem"}}></input>
+			</form>
+		</div>
+	);
 }
 
 function SetAvatar() {
+	let avatarSrc = './avatarUrl';
 
+	return (
+		<div style={{ 
+			display: "flex", 
+			height: "10rem", 
+			gap: "4rem",
+			fontFamily: "Lucida Console, Courier New, monospace" }}>
+			<img src={avatarSrc} alt="avatar"></img>
+			<ul style={{listStyleType: "none", fontSize: "12px"}}>
+				<li style={{margin: "10px"}}>This image will be your avatar</li>
+				<li style={{ margin: "10px" }}>File can't be too big</li>
+				<li style={{ margin: "10px" }}>JPG ok, nothing else</li>
+				<li style={{ margin: "10px" }}><input type="file"></input></li>
+			</ul>
+		</div>
+	);
 }
 
 
@@ -84,8 +121,14 @@ export function SettingPage() {
 
 	return (
 		<div className="user-setting">
+			<SetAvatar></SetAvatar>
+			<SetNick></SetNick>
 			<SetPassword></SetPassword>
-			<p>hello</p>
+			<h3 style={{
+				color: "darkgrey",
+				fontFamily: "Lucida Console, Courier New, monospace"}}>
+				Double Authent not done yet
+			</h3>
 		</div>
 	);
 }

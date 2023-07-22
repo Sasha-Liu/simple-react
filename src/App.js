@@ -41,7 +41,7 @@ function App() {
 			</NavItem>
 		</Navbar>
 		<div className="main">
-			<p>{page}</p>
+			<h2>{page}</h2>
 			{/** show page component according to state */}
 			{page === 'Setting' && <SettingPage />}
 		</div>
