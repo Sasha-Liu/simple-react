@@ -4,7 +4,7 @@ import { CSSTransition } from 'react-transition-group';
 import {RightArrow} from './icons.js';
 import {DownArrow} from './icons.js';
 
-function SetPassDropdown(props) {
+function Dropdown(props) {
 	let h = props.open ? "27rem" : "0rem";
 	
 	return (
@@ -19,17 +19,9 @@ function SetPassDropdown(props) {
 				in={props.open}
 				timeout={500}
 				classNames="dropdown"
-				unmountOnExit
-			>
-				<form className="set-pass-form">
-					<label htmlFor="current-pass">Current password</label><br></br>
-					<input name="current-pass" id="current-pass"></input><br></br>
-					<label htmlFor="new-pass">New password</label><br></br>
-					<input name="new-pass" id="new-pass"></input><br></br>
-					<label htmlFor="confirm-pass">Confirm password</label><br></br>
-					<input name="confirm-again" id="confirm-again"></input><br></br>
-					<br></br>
-					<input type="submit"></input>
+				unmountOnExit>
+				<form>
+					{props.children}
 				</form>
 			</CSSTransition>
 		</div>
@@ -38,13 +30,34 @@ function SetPassDropdown(props) {
 
 function SetPassword() {
 	const [open, setOpen] = useState(false);
+
+	function Content() {
+		return (
+			<div className="set-pass-form">
+				<label htmlFor="current-pass">Current password</label><br></br>
+				<input name="current-pass" id="current-pass"></input><br></br>
+				<label htmlFor="new-pass">New password</label><br></br>
+				<input name="new-pass" id="new-pass"></input><br></br>
+				<label htmlFor="confirm-pass">Confirm password</label><br></br>
+				<input name="confirm-again" id="confirm-again"></input><br></br>
+				<br></br>
+				<input type="submit"></input>
+			</div>
+		);
+	}
 	
 	return (
 		<div>
 			<div>
-				<h3 onClick={() => setOpen(!open)}>Change Password</h3>
+				<h3 
+					className="option" 
+					onClick={() => setOpen(!open)}>
+					Change Password
+				</h3>
 			</div>
-			<SetPassDropdown open={open}></SetPassDropdown>
+			<Dropdown open={open}>
+				<Content></Content>
+			</Dropdown>
 		</div>
 	);
 }
@@ -75,7 +88,6 @@ export function SettingPage() {
 		<div className="user-setting">
 			<SetPassword></SetPassword>
 			<p>hello</p>
-			
 		</div>
 	);
 }

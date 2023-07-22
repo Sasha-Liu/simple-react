@@ -17,6 +17,15 @@
 	gap: 10px;
 }
 
+.option {
+	color: darkgrey;
+	font-family: "Lucida Console", "Courier New", monospace;
+	transition: color 500ms;
+}
+.option:hover {
+	color: black;
+}
+
 .set-pass-form {
 	height: 15rem;
 	width: 12rem;
@@ -28,6 +37,7 @@
 	border: 3px solid grey;
 }
 
+/*CSS transition*/
 .dropdown-enter {
 	position: relative;
 	opacity: 0;
@@ -49,3 +59,20 @@
 	opacity: 0;
 	transition: all var(--speed) ease-in-out;
 }
+
+/* .arrow-turn-enter {
+	transform: rotate(0deg);
+	
+}
+.arrow-turn-enter-active {
+	transform: rotate(90deg);
+	transition: all var(--speed) ease-in-out;
+}
+.arrow-turn-exit {
+	transform: rotate(90deg);
+	
+}
+.arrow-turn-exit-active {
+	transform: rotate(0);
+	transition: all var(--speed) ease-in-out;
+} */
