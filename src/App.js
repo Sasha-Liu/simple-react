@@ -16,28 +16,23 @@ function App() {
 		<Navbar className="navbar">
 			<NavItem 
 				icon={<Home />} 
-				onClick={() => setPage('Home')}
-				>
+				onClick={() => setPage('Home')}>
 			</NavItem>
 			<NavItem 
 				onClick={() => setPage('Profile')}
-				icon={<Profile></Profile>} 
-				>
+				icon={<Profile></Profile>} >
 			</NavItem>
 			<NavItem 
 				icon={<Chat></Chat>} 
-				onClick={() => setPage('Social')}
-				>
+				onClick={() => setPage('Social')}>
 			</NavItem>
 			<NavItem 
 				icon={<Game></Game>} 
-				onClick={() => setPage('Game')}
-				>
+				onClick={() => setPage('Game')}>
 			</NavItem>
 			<NavItem 
 				icon={<Setting></Setting>} 
-				onClick={() => setPage('Setting')}
-				>
+				onClick={() => setPage('Setting')}>
 			</NavItem>
 		</Navbar>
 		<div className="main">
