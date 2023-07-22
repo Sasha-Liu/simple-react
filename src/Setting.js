@@ -20,9 +20,7 @@ function Dropdown(props) {
 				timeout={500}
 				classNames="dropdown"
 				unmountOnExit>
-				<form>
 					{props.children}
-				</form>
 			</CSSTransition>
 		</div>
 	);
@@ -33,7 +31,7 @@ function SetPassword() {
 
 	function Content() {
 		return (
-			<div className="set-pass-form">
+			<form className="set-pass-form">
 				<label htmlFor="current-pass">Current password</label><br></br>
 				<input name="current-pass" id="current-pass"></input><br></br>
 				<label htmlFor="new-pass">New password</label><br></br>
@@ -42,7 +40,7 @@ function SetPassword() {
 				<input name="confirm-again" id="confirm-again"></input><br></br>
 				<br></br>
 				<input type="submit"></input>
-			</div>
+			</form>
 		);
 	}
 	
