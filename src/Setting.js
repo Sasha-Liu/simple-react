@@ -5,12 +5,14 @@ import {RightArrow} from './icons.js';
 import {DownArrow} from './icons.js';
 
 function SetPassDropdown(props) {
+	let h = props.open ? "27rem" : "0rem";
+	
 	return (
 		<div style={{
 			overflow: "hidden",
-			height: "27rem",
+			height: h,
 			width: "22rem",
-			transition: "25rem 500ms ease",
+			transition: "height 500ms ease",
 			}}
 			>
 			<CSSTransition
@@ -72,7 +74,7 @@ export function SettingPage() {
 	return (
 		<div className="user-setting">
 			<SetPassword></SetPassword>
-
+			<p>hello</p>
 			
 		</div>
 	);
