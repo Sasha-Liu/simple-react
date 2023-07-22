@@ -1,8 +1,51 @@
-
-.set-avatar {
-	display: flex;
-	gap: 10rem;
+/* CSS variable */
+:root {
+	--bg: #242526;
+	--bg-accent: #484a4d;
+	--text-color: #dadce1;
+	--nav-size: 60px;
+	--border: 1px solid #474a4d;
+	--border-radius: 8px;
+	--speed: 500ms;
 }
 
-.setting {
+.user-setting {
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	align-items: flex-start;
+	gap: 10px;
+}
+
+.set-pass-form {
+	height: 15rem;
+	width: 12rem;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: flex-start;
+	padding: 20%;
+	border: 3px solid grey;
+}
+
+.dropdown-enter {
+	position: relative;
+	opacity: 0;
+	transform: translateY(-110%);
+}
+.dropdown-enter-active {
+	transform: translateY(0%);
+	opacity: 1;
+	transition: all var(--speed) ease-in-out;
+}
+.dropdown-exit {
+	position: relative;
+	opacity: 1;
+	transform: translateY(0%);
+	
+}
+.dropdown-exit-active {
+	transform: translateY(-110%);
+	opacity: 0;
+	transition: all var(--speed) ease-in-out;
 }

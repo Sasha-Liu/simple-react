@@ -1,16 +1,50 @@
 import './css/SettingPage.css';
+import { useState } from 'react';
+import { CSSTransition } from 'react-transition-group';
+import {RightArrow} from './icons.js';
+import {DownArrow} from './icons.js';
 
+function SetPassDropdown(props) {
+	return (
+		<div style={{
+			overflow: "hidden",
+			height: "27rem",
+			width: "22rem",
+			transition: "25rem 500ms ease",
+			}}
+			>
+			<CSSTransition
+				in={props.open}
+				timeout={500}
+				classNames="dropdown"
+				unmountOnExit
+			>
+				<form className="set-pass-form">
+					<label htmlFor="current-pass">Current password</label><br></br>
+					<input name="current-pass" id="current-pass"></input><br></br>
+					<label htmlFor="new-pass">New password</label><br></br>
+					<input name="new-pass" id="new-pass"></input><br></br>
+					<label htmlFor="confirm-pass">Confirm password</label><br></br>
+					<input name="confirm-again" id="confirm-again"></input><br></br>
+					<br></br>
+					<input type="submit"></input>
+				</form>
+			</CSSTransition>
+		</div>
+	);
+}
 
-/* 
-	set password 
-	click on it should create a drop down
-	which will ask for 
-	current password
-	new password
-	enter again the new password
-*/
 function SetPassword() {
-
+	const [open, setOpen] = useState(false);
+	
+	return (
+		<div>
+			<div>
+				<h3 onClick={() => setOpen(!open)}>Change Password</h3>
+			</div>
+			<SetPassDropdown open={open}></SetPassDropdown>
+		</div>
+	);
 }
 
 function SetdoubleAuthen() {
@@ -36,42 +70,11 @@ export function SettingPage() {
 	/**here define a function to send info to backend */
 
 	return (
-		<form className="setting">
-			<div className="set-avatar">
-				<img 
-					src={avatarSrc}
-					alt="avatar">
-				</img>
-				<div>
-					<ul>
-						<li>Nice image of your face</li>
-						<li>Not too big</li>
-						<li>Not too small</li>
-						<li>JPG, nothing else</li>
-					</ul>
-					{/*how to upload photo ?*/}
-					<button 
-						onClick={() => alert('upload')}
-						>
-						Upload new photo
-					</button>
-				</div>
-			</div>
+		<div className="user-setting">
+			<SetPassword></SetPassword>
 
-			<label for="nick">Nickname</label><br/>
-			<input 
-				type="text" 
-				id="nick" 
-				name="nick"
-				value={nickname}
-				placeholder="nickname" 
-				/>
-			<br/>
 			
-
-			{/*prevent default for submit ??*/}
-			<input type="submit"></input> <br></br>
-		</form>
+		</div>
 	);
 }
 
